@@ -16,6 +16,9 @@ function calculateSum() {
     return result;
   } catch (error) {
     return error.message;
+  } finally {
+    document.getElementById('value1').value = '';
+    document.getElementById('value2').value = '';
   }
 }
 
