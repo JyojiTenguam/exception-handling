@@ -1,7 +1,11 @@
 const ValueNumber = (number1, number2) => {
-  if (typeof number1 !== '' || typeof number2 !== '')
-    throw new Error("Preencha os campos para realizar a soma")
-}
+  if (number1 === '' || number2 === '') {
+    throw new Error('Preencha os campos para realizar a soma');
+  }
+  if (Number.isNaN(Number(number1)) || Number.isNaN(Number(number2))) {
+    throw new Error('Informe dois números para realizar a soma');
+  }
+};
 
 function calculateSum() {
   try {
@@ -11,7 +15,7 @@ function calculateSum() {
     const result = Number(value1) + Number(value2);
     return result;
   } catch (error) {
-  return error.message;
+    return error.message;
   }
 }
 
